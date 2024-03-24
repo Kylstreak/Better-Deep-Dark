@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "better_deep_dark",
+  "version": "${version}",
+  "name": "Better Deep Dark",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/derst/Better Deep Dark"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/better_deep_dark/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.ks12.better_deep_dark.client.BetterDeepDarkClient"
+    ],
+    "main": [
+      "com.ks12.better_deep_dark.BetterDeepDark"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
