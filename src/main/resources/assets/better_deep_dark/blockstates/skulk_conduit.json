@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "active=false": {"model":  "better_deep_dark:block/skulk_conduit"},
+    "active=true": {"model": "better_deep_dark:block/skulk_conduit_active"}
+  }
+}

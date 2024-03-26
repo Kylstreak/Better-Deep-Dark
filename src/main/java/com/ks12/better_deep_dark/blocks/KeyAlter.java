@@ -1,5 +1,7 @@
 package com.ks12.better_deep_dark.blocks;
 
+import com.ks12.better_deep_dark.items.ModItems;
+import com.ks12.better_deep_dark.sounds.ModSounds;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -7,9 +9,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.ArrayVoxelShape;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -22,16 +26,23 @@ public class KeyAlter extends Block {
                 .nonOpaque()
                 .strength(-1.0f, 3600000.0f)
                 .dropsNothing()
-                .allowsSpawning(Blocks::never));
+                .allowsSpawning(Blocks::never)
+                .luminance(10));
     }
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (entity instanceof ItemEntity){
-            ItemEntity itemEntity = (ItemEntity) entity;
+        if (entity instanceof ItemEntity itemEntity){
             if (itemEntity.getY() >= pos.getY() + 0.5) {
-                //TODO: logic for wardens heart burned
-                entity.damage(world.getDamageSources().inFire(), 1.0f);
+                if (itemEntity.getStack().isOf(ModItems.WARDEN_HEART)) {
+                    BlockState belowState;
+                    BlockPos.Mutable mutable = pos.mutableCopy().move(Direction.DOWN);
+                    if ((belowState = world.getBlockState(mutable)).isOf(ModBlocks.SKULK_CONDUIT)) {
+                        SkulkConduit skulkConduit = (SkulkConduit) belowState.getBlock();
+                        skulkConduit.activateFirst(world, mutable, true);
+                    }
+                }
+                entity.kill();
             }
         }
     }

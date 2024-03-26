@@ -1,0 +1,12 @@
+{
+  "skulk_conduit_crack": {
+    "sounds": [
+      "better_deep_dark:skulk_conduit_crack"
+    ]
+  },
+  "skulk_conduit_activate": {
+    "sounds": [
+      "better_deep_dark:skulk_conduit_power"
+    ]
+  }
+}
