@@ -3,6 +3,7 @@ package com.ks12.better_deep_dark;
 import com.ks12.better_deep_dark.blocks.ModBlocks;
 import com.ks12.better_deep_dark.commands.ModCommands;
 import com.ks12.better_deep_dark.items.ModItems;
+import com.ks12.better_deep_dark.particles.ModParticle;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -18,5 +19,6 @@ public class BetterDeepDark implements ModInitializer {
         ModBlocks.updateMappings();
         ModItems.registerAll();
         ModCommands.registerAll();
+        ModParticle.registerAll();
     }
 }

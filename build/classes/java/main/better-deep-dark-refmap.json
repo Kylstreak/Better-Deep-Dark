@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "com/ks12/better_deep_dark/mixins/PlayerEntityMixin": {
+      "attack": "Lnet/minecraft/class_1657;method_7324(Lnet/minecraft/class_1297;)V",
+      "spawnSweepAttackParticles()V": "Lnet/minecraft/class_1657;method_7263()V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "com/ks12/better_deep_dark/mixins/PlayerEntityMixin": {
+        "attack": "Lnet/minecraft/class_1657;method_7324(Lnet/minecraft/class_1297;)V",
+        "spawnSweepAttackParticles()V": "Lnet/minecraft/class_1657;method_7263()V"
+      }
+    }
+  }
+}

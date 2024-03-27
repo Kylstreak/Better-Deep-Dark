@@ -1,0 +1,2 @@
+v1	named	intermediary
+METHOD	com/ks12/better_deep_dark/mixins/PlayerEntityMixin	(Lnet/minecraft/entity/Entity;)V	attack	method_7324

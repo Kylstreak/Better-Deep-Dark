@@ -7,7 +7,6 @@ import com.mojang.brigadier.Command;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -15,7 +14,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.RaycastContext;
 import org.jetbrains.annotations.Nullable;
 
 public class ModCommands {
@@ -27,7 +25,7 @@ public class ModCommands {
         if (sender != null) {
             final @Nullable ServerPlayerEntity player = source.getPlayer();
             if (player != null) {
-                BlockHitResult rayCastResult = ModUtil.rayCast(player, 4.5f);
+                BlockHitResult rayCastResult = ModUtil.rayCastBlock(player, 4.5f);
                 if (rayCastResult.getType() == HitResult.Type.BLOCK) {
                     BlockPos blockPos = rayCastResult.getBlockPos();
                     BlockState hitBlock = player.getWorld().getBlockState(blockPos);

@@ -8,5 +8,15 @@
     "sounds": [
       "better_deep_dark:skulk_conduit_power"
     ]
+  },
+  "sonic_charge": {
+    "sounds": [
+      "better_deep_dark:sonic_charge"
+    ]
+  },
+  "sonic_blast": {
+    "sounds": [
+      "better_deep_dark:sonic_blast"
+    ]
   }
 }

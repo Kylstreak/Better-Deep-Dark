@@ -33,7 +33,7 @@ public class KeyAlter extends Block {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof ItemEntity itemEntity){
-            if (itemEntity.getY() >= pos.getY() + 0.5) {
+            if (itemEntity.getY() >= pos.getY() + 0.7) {
                 if (itemEntity.getStack().isOf(ModItems.WARDEN_HEART)) {
                     BlockState belowState;
                     BlockPos.Mutable mutable = pos.mutableCopy().move(Direction.DOWN);
