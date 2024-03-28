@@ -2,3 +2,4 @@
 /.idea/
 /run/
 /.gradle/loom-cache/
+/build/loom-cache
