@@ -13,6 +13,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.TypeFilter;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -25,7 +26,7 @@ public class WardenAxe extends AxeItem {
         super(WardenToolMaterial.INSTANCE, 5, -3, new FabricItemSettings());
     }
 
-    public void criticalAttackParticle(World world, PlayerEntity player) {
+    public void criticalAttackParticle(World world, LivingEntity player) {
         double d = -MathHelper.sin(player.getYaw() * ((float) Math.PI / 180));
         double e = MathHelper.cos(player.getYaw() * ((float) Math.PI / 180));
 
@@ -34,7 +35,7 @@ public class WardenAxe extends AxeItem {
         }
     }
 
-    public void cleaveAttackParticle(World world, PlayerEntity player) {
+    public void cleaveAttackParticle(World world, LivingEntity player) {
         double d = -MathHelper.sin(player.getYaw() * ((float) Math.PI / 180));
         double e = MathHelper.cos(player.getYaw() * ((float) Math.PI / 180));
 
@@ -43,7 +44,7 @@ public class WardenAxe extends AxeItem {
         }
     }
 
-    public void doSonicBlast(PlayerEntity player, LivingEntity target, double knockbackMultiplier) {
+    public void doSonicBlast(LivingEntity player, LivingEntity target, double knockbackMultiplier) {
         World world = player.getWorld();
 
         float lookX = MathHelper.sin(player.getYaw() * ((float) Math.PI / 180));

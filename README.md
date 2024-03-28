@@ -32,6 +32,7 @@
 - Wardens shield 
   - Echos Wrath - Reflects any projectiles at 1.5x the velocity in the direction they came from
 - Wardens tools (hoe/axe/pickaxe/shovel)
+  - Axe - Combo system rework 
   - Depth’s whisper - greatly decrease the range for which blocks broken by the tool can be heard from allowing easier breakage of shriekers and detectors
 - Other enchantments
   - Chasm’s embrace (boots) - increases the height the player can fall from without taking damage ONLY while in the deep dark

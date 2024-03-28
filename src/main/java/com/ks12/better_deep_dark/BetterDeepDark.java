@@ -7,6 +7,7 @@ import com.ks12.better_deep_dark.particles.ModParticle;
 import com.ks12.better_deep_dark.player.PlayerAttributes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.loader.impl.lib.tinyremapper.extension.mixin.common.Logger;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

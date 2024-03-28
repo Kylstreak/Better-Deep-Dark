@@ -1,10 +1,7 @@
 package com.ks12.better_deep_dark.items;
 
 import com.ks12.better_deep_dark.BetterDeepDark;
-import com.ks12.better_deep_dark.items.tools.WardenAxe;
-import com.ks12.better_deep_dark.items.tools.WardenHoe;
-import com.ks12.better_deep_dark.items.tools.WardenPickaxe;
-import com.ks12.better_deep_dark.items.tools.WardenSword;
+import com.ks12.better_deep_dark.items.tools.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
@@ -18,11 +15,13 @@ public class ModItems {
     public static final Item WARDEN_AXE = new WardenAxe();
     public static final Item WARDEN_HOE = new WardenHoe();
     public static final Item WARDEN_PICKAXE = new WardenPickaxe();
+    public static final Item WARDEN_SHOVEL = new WardenShovel();
     public static void registerAll() {
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "warden_heart"), WARDEN_HEART);
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "warden_sword"), WARDEN_SWORD);
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "warden_axe"), WARDEN_AXE);
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "warden_hoe"), WARDEN_HOE);
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "warden_pickaxe"), WARDEN_PICKAXE);
+        Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "warden_shovel"), WARDEN_SHOVEL);
     }
 }
