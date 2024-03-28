@@ -20,13 +20,15 @@ public class ModUtil {
     }
 
     public static HitResult raycastEntity(PlayerEntity player, double maxDistance) {
-        Entity cameraEntity = MinecraftClient.getInstance().cameraEntity;
-        if (cameraEntity != null) {
-            Vec3d cameraPos = player.getCameraPosVec(1.0f);
-            Vec3d rot = player.getRotationVec(1.0f);
-            Vec3d rayCastContext = cameraPos.add(rot.x * maxDistance, rot.y * maxDistance, rot.z * maxDistance);
-            Box box = cameraEntity.getBoundingBox().stretch(rot.multiply(maxDistance)).expand(1d, 1d, 1d);
-            return ProjectileUtil.raycast(cameraEntity, cameraPos, rayCastContext, box, (entity -> /* any custom parameters here */ !entity.isSpectator() && entity.canHit()), maxDistance);
+        if (player.getWorld().isClient) {
+            Entity cameraEntity = MinecraftClient.getInstance().cameraEntity;
+            if (cameraEntity != null) {
+                Vec3d cameraPos = player.getCameraPosVec(1.0f);
+                Vec3d rot = player.getRotationVec(1.0f);
+                Vec3d rayCastContext = cameraPos.add(rot.x * maxDistance, rot.y * maxDistance, rot.z * maxDistance);
+                Box box = cameraEntity.getBoundingBox().stretch(rot.multiply(maxDistance)).expand(1d, 1d, 1d);
+                return ProjectileUtil.raycast(cameraEntity, cameraPos, rayCastContext, box, (entity -> /* any custom parameters here */ !entity.isSpectator() && entity.canHit()), maxDistance);
+            }
         }
         return null;
     }
