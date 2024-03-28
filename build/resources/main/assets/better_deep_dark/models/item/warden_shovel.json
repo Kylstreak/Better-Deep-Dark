@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "better_deep_dark:item/warden_sword"
+  }
+}
