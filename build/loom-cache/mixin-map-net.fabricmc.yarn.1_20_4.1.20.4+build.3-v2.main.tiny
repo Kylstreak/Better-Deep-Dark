@@ -1,2 +1,4 @@
 v1	named	intermediary
-METHOD	com/ks12/better_deep_dark/mixins/PlayerEntityMixin	(F)F	getAttackCooldownProgress	method_7261
+METHOD	com/ks12/better_deep_dark/mixin/PlayerEntityMixin	(F)F	getAttackCooldownProgress	method_7261
+METHOD	com/ks12/better_deep_dark/mixin/PlayerEntityMixin	(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;	interact	method_7287
+METHOD	com/ks12/better_deep_dark/mixin/PlayerEntityMixin	(Lnet/minecraft/entity/damage/DamageSource;F)Z	damage	method_5643

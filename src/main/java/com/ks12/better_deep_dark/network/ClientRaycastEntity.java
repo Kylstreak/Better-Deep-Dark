@@ -22,13 +22,16 @@ public class ClientRaycastEntity {
     public static CompletableFuture<Integer> sendRaycastRequest(ServerPlayerEntity user) {
         CompletableFuture<Integer> hitResultFuture = new CompletableFuture<>();
 
+        ServerPlayNetworking.registerGlobalReceiver(ModNetworkingConstants.RAYCAST_ENTITY_RESPONSE_ID, (server, player, handler, buf, responseSender) -> {
+            int entityId = buf.readInt();
+            hitResultFuture.complete(entityId);
+            ServerPlayNetworking.unregisterGlobalReceiver(ModNetworkingConstants.RAYCAST_ENTITY_RESPONSE_ID);
+
+        });
+
         ServerPlayNetworking.send(user, ModNetworkingConstants.RAYCAST_ENTITY_REQUEST_ID, PacketByteBufs.empty());
 
-        ServerPlayNetworking.registerGlobalReceiver(ModNetworkingConstants.RAYCAST_ENTITY_RESPONSE_ID, (server, player, handler, buf, responseSender) -> {
-             int entityId = buf.readInt();
-             hitResultFuture.complete(entityId);
-             ServerPlayNetworking.unregisterGlobalReceiver(ModNetworkingConstants.RAYCAST_ENTITY_RESPONSE_ID);
-        });
+
         return hitResultFuture;
     }
 

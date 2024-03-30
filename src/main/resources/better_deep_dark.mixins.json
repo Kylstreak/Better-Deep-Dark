@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.ks12.better_deep_dark.mixins",
+  "package": "com.ks12.better_deep_dark.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "PlayerEntityMixin"
