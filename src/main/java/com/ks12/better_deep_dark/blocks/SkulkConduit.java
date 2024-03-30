@@ -2,18 +2,13 @@ package com.ks12.better_deep_dark.blocks;
 
 import com.ks12.better_deep_dark.sounds.ModSounds;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
@@ -37,7 +32,7 @@ public class SkulkConduit extends Block {
 
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        if (world.getBlockState(pos).isOf(ModBlocks.SKULK_CONDUIT)) {
+        if (state.isOf(ModBlocks.SKULK_CONDUIT)) {
             if (!world.isClient) {
                 world.scheduleBlockTick(pos, this, DELAY_TICKS);
                 shouldBeActive = world.getBlockState(sourcePos).get(ACTIVE);

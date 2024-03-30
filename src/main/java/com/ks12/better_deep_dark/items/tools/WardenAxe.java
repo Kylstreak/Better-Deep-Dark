@@ -1,23 +1,15 @@
 package com.ks12.better_deep_dark.items.tools;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.ks12.better_deep_dark.particles.ModParticle;
 import com.ks12.better_deep_dark.sounds.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.item.TooltipData;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtList;
-import net.minecraft.nbt.NbtString;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.PlainTextContent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +19,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Optional;
 
 public class WardenAxe extends AxeItem {
     public static final double damageStackThreshold = 5d;
@@ -39,6 +30,13 @@ public class WardenAxe extends AxeItem {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         tooltip.add(Text.literal("Damage dealt: %s".formatted(((int) stack.getNbt().getDouble(damageDealtTag)))).formatted(Formatting.BLUE));
+    }
+
+    @Override
+    public ItemStack getDefaultStack() {
+        ItemStack stack = super.getDefaultStack();
+        stack.getOrCreateNbt().putDouble(damageDealtTag, 0);
+        return stack;
     }
 
     public void criticalAttackParticle(World world, LivingEntity player) {
@@ -69,6 +67,7 @@ public class WardenAxe extends AxeItem {
         Vec3d vec3d = target.getVelocity();
         Vec3d vec3d2 = new Vec3d(lookX, 0.0, lookZ).normalize().multiply(knockbackMultiplier);
         target.setVelocity(vec3d.x / 2.0 - vec3d2.x, target.isOnGround() ? Math.min(0.4, vec3d.y / 2.0 + knockbackMultiplier) : vec3d.y, vec3d.z / 2.0 - vec3d2.z);
+        target.velocityModified = true;
 
         if (world instanceof ServerWorld serverWorld) {
             Vec3d particleVec = player.getPos().add(0.0, 0.4f, 0.0);

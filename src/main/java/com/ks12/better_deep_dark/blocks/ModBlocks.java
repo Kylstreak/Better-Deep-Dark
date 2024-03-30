@@ -13,12 +13,15 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
     public static final Block KEY_ALTER = new KeyAlter();
     public static final Block SKULK_CONDUIT = new SkulkConduit();
+    public static final Block SKULK_PYLON = new SkulkPylon();
 
     public static void registerAll()  {
         Registry.register(Registries.BLOCK, new Identifier(BetterDeepDark.MOD_ID, "key_alter"), KEY_ALTER);
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "key_alter"), new BlockItem(KEY_ALTER, new FabricItemSettings()));
         Registry.register(Registries.BLOCK, new Identifier(BetterDeepDark.MOD_ID, "skulk_conduit"), SKULK_CONDUIT);
         Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "skulk_conduit"), new BlockItem(SKULK_CONDUIT, new FabricItemSettings()));
+        Registry.register(Registries.BLOCK, new Identifier(BetterDeepDark.MOD_ID, "skulk_pylon"), SKULK_PYLON);
+        Registry.register(Registries.ITEM, new Identifier(BetterDeepDark.MOD_ID, "skulk_pylon"), new BlockItem(SKULK_PYLON, new FabricItemSettings()));
     }
 
     public static void updateMappings() {

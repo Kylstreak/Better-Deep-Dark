@@ -5,11 +5,9 @@ import com.ks12.better_deep_dark.blocks.ModBlocks;
 import com.ks12.better_deep_dark.items.tools.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -34,6 +32,7 @@ public class ModItems {
                 entries.add(WARDEN_SHOVEL);
                 entries.add(ModBlocks.KEY_ALTER);
                 entries.add(ModBlocks.SKULK_CONDUIT);
+                entries.add(ModBlocks.SKULK_PYLON);
             }))
             .build();
     public static void registerAll() {
