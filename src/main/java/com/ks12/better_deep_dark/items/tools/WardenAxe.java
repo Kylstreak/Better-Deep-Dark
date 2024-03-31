@@ -7,6 +7,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -28,8 +29,11 @@ public class WardenAxe extends AxeItem {
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.literal("Damage dealt: %s".formatted(((int) stack.getNbt().getDouble(damageDealtTag)))).formatted(Formatting.BLUE));
+        NbtCompound nbt;
+        if ((nbt = stack.getNbt()) != null) {
+            super.appendTooltip(stack, world, tooltip, context);
+            tooltip.add(Text.literal("Damage dealt: %s".formatted(((int) nbt.getDouble(damageDealtTag)))).formatted(Formatting.BLUE));
+        }
     }
 
     @Override
