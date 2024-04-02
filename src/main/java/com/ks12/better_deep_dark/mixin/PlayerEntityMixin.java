@@ -1,10 +1,11 @@
 package com.ks12.better_deep_dark.mixin;
 
-import com.ks12.better_deep_dark.items.ModItems;
+import com.ks12.better_deep_dark.BetterDeepDark;
 import com.ks12.better_deep_dark.items.tools.WardenAxe;
 import com.ks12.better_deep_dark.network.ClientRaycastEntity;
-import com.ks12.better_deep_dark.particles.ModParticle;
-import com.ks12.better_deep_dark.sounds.ModSounds;
+import com.ks12.better_deep_dark.registry.ModItems;
+import com.ks12.better_deep_dark.registry.ModParticles;
+import com.ks12.better_deep_dark.registry.ModSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -39,7 +40,7 @@ public abstract class PlayerEntityMixin extends LivingEntity{
 
     @ModifyArg(method = "spawnSweepAttackParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;spawnParticles(Lnet/minecraft/particle/ParticleEffect;DDDIDDDD)I"), index = 0)
     private ParticleEffect adjustSweepParticle(ParticleEffect particle) {
-        return this.getMainHandStack().isOf(ModItems.WARDEN_SWORD) ? ModParticle.WARDEN_SWORD_SWEEP : particle;
+        return this.getMainHandStack().isOf(ModItems.WARDEN_SWORD) ? ModParticles.WARDEN_SWORD_SWEEP : particle;
     }
 
     @Inject(at = @At("HEAD"), method = "attack")

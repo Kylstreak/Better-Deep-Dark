@@ -1,6 +1,8 @@
 package com.ks12.better_deep_dark.blocks;
 
-import com.ks12.better_deep_dark.sounds.ModSounds;
+import com.ks12.better_deep_dark.BetterDeepDark;
+import com.ks12.better_deep_dark.registry.ModBlocks;
+import com.ks12.better_deep_dark.registry.ModSounds;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,7 +22,7 @@ public class SkulkConduit extends Block {
     public boolean shouldBeActive = false;
 
     public SkulkConduit() {
-        super(FabricBlockSettings.copyOf(Blocks.STONE)
+        super(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS)
                 .luminance((state)-> state.get(ACTIVE) ? 15 : 0));
         setDefaultState(getDefaultState().with(ACTIVE, false));
     }

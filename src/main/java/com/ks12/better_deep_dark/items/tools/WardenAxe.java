@@ -1,7 +1,8 @@
 package com.ks12.better_deep_dark.items.tools;
 
-import com.ks12.better_deep_dark.particles.ModParticle;
-import com.ks12.better_deep_dark.sounds.ModSounds;
+import com.ks12.better_deep_dark.BetterDeepDark;
+import com.ks12.better_deep_dark.registry.ModParticles;
+import com.ks12.better_deep_dark.registry.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
@@ -48,7 +49,7 @@ public class WardenAxe extends AxeItem {
         double e = MathHelper.cos(player.getYaw() * ((float) Math.PI / 180));
 
         if (world instanceof ServerWorld) {
-            ((ServerWorld) world).spawnParticles(ModParticle.WARDEN_AXE_SWEEP, player.getX() + d, player.getBodyY(0.5), player.getZ() + e, 0, d, 0.0, e, 0.0);
+            ((ServerWorld) world).spawnParticles(ModParticles.WARDEN_AXE_SWEEP, player.getX() + d, player.getBodyY(0.5), player.getZ() + e, 0, d, 0.0, e, 0.0);
         }
     }
 
@@ -57,7 +58,7 @@ public class WardenAxe extends AxeItem {
         double e = MathHelper.cos(player.getYaw() * ((float) Math.PI / 180));
 
         if (world instanceof ServerWorld) {
-            ((ServerWorld) world).spawnParticles(ModParticle.WARDEN_SWORD_SWEEP, player.getX() + d, player.getBodyY(0.5), player.getZ() + e, 0, d, 0.0, e, 0.0);
+            ((ServerWorld) world).spawnParticles(ModParticles.WARDEN_SWORD_SWEEP, player.getX() + d, player.getBodyY(0.5), player.getZ() + e, 0, d, 0.0, e, 0.0);
         }
     }
 

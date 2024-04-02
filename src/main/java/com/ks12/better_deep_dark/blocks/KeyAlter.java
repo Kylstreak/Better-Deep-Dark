@@ -1,7 +1,8 @@
 package com.ks12.better_deep_dark.blocks;
 
-import com.ks12.better_deep_dark.items.ModItems;
-import com.ks12.better_deep_dark.sounds.ModSounds;
+import com.ks12.better_deep_dark.BetterDeepDark;
+import com.ks12.better_deep_dark.registry.ModBlocks;
+import com.ks12.better_deep_dark.registry.ModItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -9,12 +10,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.ArrayVoxelShape;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;

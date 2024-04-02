@@ -1,5 +1,6 @@
 package com.ks12.better_deep_dark.network;
 
+import com.mojang.datafixers.types.Func;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
@@ -19,6 +20,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ClientRaycastEntity {
 
+    //this runs on the server
     public static CompletableFuture<Integer> sendRaycastRequest(ServerPlayerEntity user) {
         CompletableFuture<Integer> hitResultFuture = new CompletableFuture<>();
 
@@ -35,6 +37,7 @@ public class ClientRaycastEntity {
         return hitResultFuture;
     }
 
+    //this runs on the client
     public static void registerListener() {
         ClientPlayNetworking.registerGlobalReceiver(ModNetworkingConstants.RAYCAST_ENTITY_REQUEST_ID, (minecraftClient, clientPlayNetworkHandler, packetByteBuf, packetSender) -> {
             HitResult hitResult = MinecraftClient.getInstance().crosshairTarget;
