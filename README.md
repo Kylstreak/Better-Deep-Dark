@@ -17,7 +17,7 @@
 - Wardens sword (partially implemented)
   - Wardens Cry - After dealing sufficient damage, on next hit implements an AOE attack that damages all nearby entities (wolves excluded) and throws them away from the player, however if used near a shrieker will bypass cooldowns and immediately summon a warden. Can be canceled by crouching on next hit
 - Wardens axe
-  - Sonic blast - After dealing sufficient damage, on next CRITICAL hit implements a targeted knockback blast that deals knockback multiplied by the amount of damage done
+  - Sonic blast - After dealing sufficient damage, on next CRITICAL hit implements a targeted sound blast that deals knockback multiplied by the amount of damage done
 
 ### Planed Features
 
@@ -26,7 +26,7 @@
   - Helmet
     - Echolocation - Counteracts the darkness effect
   - Chestplate
-    - All consuming - When a player takes damage a 50% of it is consumed by the chestplate and emmited as a sound. Sound strength is equal to the amount of damage taken
+    - All consuming - When a player takes damage a 50% of it is consumed by the chestplate and emmited as a sound. Sound strength is equal to the amount of damage taken. This ability can be toggled on or off using the keybind (default: j)
   - Leggings
     - Abyssal Fortitude - Grants permanent resistance 2 while the player is below y = 0 or in the deep dark dimension
   - Boots
