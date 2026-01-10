@@ -16,6 +16,8 @@
 - Wardens heart - Beats ominously...
 - Wardens sword (partially implemented)
   - Wardens Cry - After dealing sufficient damage, on next hit implements an AOE attack that damages all nearby entities (wolves excluded) and throws them away from the player, however if used near a shrieker will bypass cooldowns and immediately summon a warden. Can be canceled by crouching on next hit
+  - Wardens axe
+    - Sonic blast - After dealing sufficient damage, on next CRITICAL hit implements a targeted knockback blast that deals knockback multiplied by the amount of damage done
 
 ### Planed Features
 
@@ -24,21 +26,20 @@
   - Helmet
     - Echolocation - Counteracts the darkness effect
   - Chestplate
-    - Echo of The Abyss - Allows a player to create a sound blast similar to the wardens that will redistribute 75% of the damage they've taken in the last 15 seconds in straight line, ignoring all blocks except wool
+    - All consuming - When a player takes damage a 50% of it is consumed by the chestplate and emmited as a sound. Sound strength is equal to the amount of damage taken
   - Leggings
     - Abyssal Fortitude - Grants permanent resistance 2 while the player is below y = 0 or in the deep dark dimension
   - Boots
     - Abyssal veil - Allows the player to move without triggering sound sensitive blocks or entities, entities can still sniff the player as well as hear any sounds produced by the player interacting in the world or taking/dealing damage
 - Wardens shield 
   - Echos Wrath - Reflects any projectiles at 1.5x the velocity in the direction they came from
-- Wardens tools (hoe/axe/pickaxe/shovel)
-  - Axe - Combo system rework 
-  - Depth’s whisper - greatly decrease the range for which blocks broken by the tool can be heard from allowing easier breakage of shriekers and detectors
+- Wardens tools (hoe/pickaxe/shovel)
+  - Depth’s whisper - greatly decrease the range for which blocks broken/tilled/stripped by the tool can be heard from allowing easier breakage of shriekers and detectors
 - Other enchantments
   - Chasm’s embrace (boots) - increases the height the player can fall from without taking damage ONLY while in the deep dark
-  - Sculk Synergy (tools) - increases the tools mining speed based on the amount of sculk blocks nearby (accepts sculk block, sculk vein, sculk sensor, sculk catalyst)
+  - Sculk Synergy (tools) - increases the tools mining speed based on the amount of sculk blocks nearby can be used with Efficeincy and the speed boost will stack (accepts sculk block, sculk vein, sculk sensor, sculk catalyst)
   - Echo of catalysis (sword) - killing mobs  will spread nearby sculk regardless of whether a catalyst is present.
-- Sculk apple - gives the standard golden apple effects
+- Sculk apple - gives the standard golden apple effects plus:
   - Whisper’s embrace - status effect that temporarily allows any action to be performed without alerting nearby sound sensitive blocks or entities
 
 
