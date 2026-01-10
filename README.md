@@ -32,7 +32,7 @@
   - Boots
     - Abyssal veil - Allows the player to move without triggering sound sensitive blocks or entities, entities can still sniff the player as well as hear any sounds produced by the player interacting in the world or taking/dealing damage
 - Wardens shield 
-  - Echos Wrath - Reflects any projectiles at 1.5x the velocity in the direction they came from
+  - Echos Ward - Allows blocking of any sound based attacks but at a cost, sound based attacks will be redistributed as sound waves which can alert nearby shriekers/skulk sesors
 - Wardens tools (hoe/pickaxe/shovel)
   - Depth’s whisper - greatly decrease the range for which blocks broken/tilled/stripped by the tool can be heard from allowing easier breakage of shriekers and detectors
 - Other enchantments
