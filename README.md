@@ -16,8 +16,8 @@
 - Wardens heart - Beats ominously...
 - Wardens sword (partially implemented)
   - Wardens Cry - After dealing sufficient damage, on next hit implements an AOE attack that damages all nearby entities (wolves excluded) and throws them away from the player, however if used near a shrieker will bypass cooldowns and immediately summon a warden. Can be canceled by crouching on next hit
-  - Wardens axe
-    - Sonic blast - After dealing sufficient damage, on next CRITICAL hit implements a targeted knockback blast that deals knockback multiplied by the amount of damage done
+- Wardens axe
+  - Sonic blast - After dealing sufficient damage, on next CRITICAL hit implements a targeted knockback blast that deals knockback multiplied by the amount of damage done
 
 ### Planed Features
 
