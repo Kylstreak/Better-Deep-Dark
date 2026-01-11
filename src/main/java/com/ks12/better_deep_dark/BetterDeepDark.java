@@ -15,6 +15,7 @@ public class BetterDeepDark implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        RegistryHandler.initCommon();
         RegistryHandler.completeAllRegistrations();
 
 //        ModBlocks.load();

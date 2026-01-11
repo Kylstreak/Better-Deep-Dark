@@ -81,6 +81,7 @@ public class WardenAxe extends AxeItem {
             for (int i = 0; i < MathHelper.floor(particleVec2.length()) + 7; ++i) {
                 Vec3d particleVec4 = particleVec.add(particleVec3.multiply(i));
                 serverWorld.spawnParticles(ParticleTypes.SONIC_BOOM, particleVec4.x, particleVec4.y, particleVec4.z, 1, 0.0, 0.0, 0.0, 0.0);
+
             }
             world.playSound(null, BlockPos.ofFloored(player.getPos()), ModSounds.SONIC_BLAST_SOUND, SoundCategory.BLOCKS, 3.0f, 1f);
         }
