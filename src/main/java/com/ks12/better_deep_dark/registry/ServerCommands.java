@@ -1,11 +1,8 @@
 package com.ks12.better_deep_dark.registry;
 
-import com.ks12.better_deep_dark.BetterDeepDark;
-import com.ks12.better_deep_dark.blocks.SkulkConduit;
+import com.ks12.better_deep_dark.common.blocks.SkulkConduit;
 import com.ks12.better_deep_dark.util.ModUtil;
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -17,9 +14,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ServerCommands {
 

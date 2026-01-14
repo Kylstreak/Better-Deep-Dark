@@ -1,8 +1,8 @@
 package com.ks12.better_deep_dark.registry;
 
-import com.ks12.better_deep_dark.blocks.KeyAlter;
-import com.ks12.better_deep_dark.blocks.SkulkConduit;
-import com.ks12.better_deep_dark.blocks.SkulkPylon;
+import com.ks12.better_deep_dark.common.blocks.KeyAlter;
+import com.ks12.better_deep_dark.common.blocks.SkulkConduit;
+import com.ks12.better_deep_dark.common.blocks.SkulkPylon;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;

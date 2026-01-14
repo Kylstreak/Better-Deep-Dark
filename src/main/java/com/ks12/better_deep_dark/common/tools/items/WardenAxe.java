@@ -1,6 +1,5 @@
-package com.ks12.better_deep_dark.items.tools;
+package com.ks12.better_deep_dark.common.tools.items;
 
-import com.ks12.better_deep_dark.BetterDeepDark;
 import com.ks12.better_deep_dark.registry.ModParticles;
 import com.ks12.better_deep_dark.registry.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;

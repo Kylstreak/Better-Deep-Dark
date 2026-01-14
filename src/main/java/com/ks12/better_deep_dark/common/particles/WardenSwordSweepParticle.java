@@ -1,4 +1,4 @@
-package com.ks12.better_deep_dark.particles;
+package com.ks12.better_deep_dark.common.particles;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

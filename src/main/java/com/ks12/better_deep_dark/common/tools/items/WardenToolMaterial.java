@@ -1,4 +1,4 @@
-package com.ks12.better_deep_dark.items.tools;
+package com.ks12.better_deep_dark.common.tools.items;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;

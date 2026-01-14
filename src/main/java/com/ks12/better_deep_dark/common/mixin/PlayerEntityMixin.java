@@ -1,7 +1,7 @@
-package com.ks12.better_deep_dark.mixin;
+package com.ks12.better_deep_dark.common.mixin;
 
-import com.ks12.better_deep_dark.BetterDeepDark;
-import com.ks12.better_deep_dark.items.tools.WardenAxe;
+import com.ks12.better_deep_dark.common.tools.items.WardenAxe;
+import com.ks12.better_deep_dark.common.tools.items.WardenSword;
 import com.ks12.better_deep_dark.network.ClientRaycastEntity;
 import com.ks12.better_deep_dark.registry.ModItems;
 import com.ks12.better_deep_dark.registry.ModParticles;
@@ -28,15 +28,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 
 @Mixin(PlayerEntity.class)
-public abstract class PlayerEntityMixin extends LivingEntity{
+public abstract class PlayerEntityMixin extends LivingEntity {
     protected PlayerEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
-    @Shadow public abstract float getAttackCooldownProgress(float baseTime);
 
-    @Shadow public abstract ActionResult interact(Entity entity, Hand hand);
+    @Shadow
+    public abstract float getAttackCooldownProgress(float baseTime);
 
-    @Shadow public abstract boolean damage(DamageSource source, float amount);
+    @Shadow
+    public abstract ActionResult interact(Entity entity, Hand hand);
+
+    @Shadow
+    public abstract boolean damage(DamageSource source, float amount);
 
     @ModifyArg(method = "spawnSweepAttackParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;spawnParticles(Lnet/minecraft/particle/ParticleEffect;DDDIDDDD)I"), index = 0)
     private ParticleEffect adjustSweepParticle(ParticleEffect particle) {
@@ -44,9 +48,11 @@ public abstract class PlayerEntityMixin extends LivingEntity{
     }
 
     @Inject(at = @At("HEAD"), method = "attack")
-    private void axeCombatModification(CallbackInfo ci) {
-        ItemStack itemInstance;
-        if ((itemInstance = this.getMainHandStack()).isOf(ModItems.WARDEN_AXE)) {
+    private void combatModification(CallbackInfo ci) {
+        ItemStack itemInstance = this.getMainHandStack();
+
+        // Axe
+        if (itemInstance.isOf(ModItems.WARDEN_AXE)) {
             if (getAttackCooldownProgress(0.5f) > 0.9f) {
                 boolean crit = !this.isOnGround() && this.fallDistance > 0.0f && !this.isClimbing() && !this.isTouchingWater() && !this.hasVehicle();
                 if (((PlayerEntity) (Object) this) instanceof ServerPlayerEntity)
@@ -72,6 +78,23 @@ public abstract class PlayerEntityMixin extends LivingEntity{
                             this.getWorld().playSound(null, BlockPos.ofFloored(this.getPos()), ModSounds.SONIC_CHARGE_SOUND, SoundCategory.PLAYERS, 3.0f, (float) (0.5 + (damageDealt * 0.2)));
                         }
                     });
+            }
+        }
+
+        if (itemInstance.isOf(ModItems.WARDEN_SWORD)) {
+            if (getAttackCooldownProgress(0.5f) > 0.9f) {
+                if (((PlayerEntity) (Object) this) instanceof ServerPlayerEntity) {
+                    WardenSword sword = (WardenSword) this.getMainHandStack().getItem();
+                    double damageDealt = itemInstance.getNbt().getDouble(WardenSword.damageDealtTag) + 1;
+
+                    itemInstance.getOrCreateNbt().putDouble(WardenSword.damageDealtTag, damageDealt);
+
+                    if (damageDealt > 5 && !this.isSneaking()) {
+                        sword.doWardensCry(this);
+                        itemInstance.getOrCreateNbt().putDouble(WardenSword.damageDealtTag, 0);
+                    }
+                    this.getWorld().playSound(null, BlockPos.ofFloored(this.getPos()), ModSounds.SONIC_CHARGE_SOUND, SoundCategory.PLAYERS, 3.0f, (float) (0.5 + (damageDealt * 0.2)));
+                }
             }
         }
     }

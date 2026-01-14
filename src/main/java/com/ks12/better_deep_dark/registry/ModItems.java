@@ -1,21 +1,13 @@
 package com.ks12.better_deep_dark.registry;
 
-import com.ks12.better_deep_dark.BetterDeepDark;
-import com.ks12.better_deep_dark.blocks.SkulkConduit;
-import com.ks12.better_deep_dark.items.tools.*;
+import com.ks12.better_deep_dark.common.tools.items.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ModItems {
     public static final Item WARDEN_HEART = RegistryHandler.registryEntry(Registries.ITEM, "warden_heart", new Item(new FabricItemSettings())).build();

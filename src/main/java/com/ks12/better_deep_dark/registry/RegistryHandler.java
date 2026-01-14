@@ -65,6 +65,7 @@ public  class RegistryHandler {
     }
 
     public static void initCommon() {
+        ModBlockEntities.load();
         ModBlocks.load();
         ModItems.load();
         ModParticles.load();

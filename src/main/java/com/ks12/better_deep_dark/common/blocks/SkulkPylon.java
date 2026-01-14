@@ -1,4 +1,4 @@
-package com.ks12.better_deep_dark.blocks;
+package com.ks12.better_deep_dark.common.blocks;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;

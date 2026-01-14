@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sculk",
+    "minecraft:sculk_vein",
+    "minecraft:sculk_sensor",
+    "minecraft:calibrated_sculk_sensor",
+    "minecraft:sculk_shrieker",
+    "minecraft:sculk_catalyst",
+    "better_deep_dark:warden_heart",
+    "better_deep_dark:warden_sword",
+    "better_deep_dark:warden_axe",
+    "better_deep_dark:warden_hoe",
+    "better_deep_dark:warden_pickaxe",
+    "better_deep_dark:warden_shovel"
+  ]
+}

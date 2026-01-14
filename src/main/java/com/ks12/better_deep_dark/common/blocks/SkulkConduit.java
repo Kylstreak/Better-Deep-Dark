@@ -1,6 +1,5 @@
-package com.ks12.better_deep_dark.blocks;
+package com.ks12.better_deep_dark.common.blocks;
 
-import com.ks12.better_deep_dark.BetterDeepDark;
 import com.ks12.better_deep_dark.registry.ModBlocks;
 import com.ks12.better_deep_dark.registry.ModSounds;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
