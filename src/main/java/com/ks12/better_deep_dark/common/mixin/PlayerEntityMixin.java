@@ -1,7 +1,7 @@
 package com.ks12.better_deep_dark.common.mixin;
 
-import com.ks12.better_deep_dark.common.tools.items.WardenAxe;
-import com.ks12.better_deep_dark.common.tools.items.WardenSword;
+import com.ks12.better_deep_dark.common.items.tools.WardenAxe;
+import com.ks12.better_deep_dark.common.items.tools.WardenSword;
 import com.ks12.better_deep_dark.network.ClientRaycastEntity;
 import com.ks12.better_deep_dark.registry.ModItems;
 import com.ks12.better_deep_dark.registry.ModParticles;

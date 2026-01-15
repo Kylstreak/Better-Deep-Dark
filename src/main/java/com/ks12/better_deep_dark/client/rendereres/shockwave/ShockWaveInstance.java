@@ -30,6 +30,10 @@ public final class ShockWaveInstance {
     public boolean done() {
         return ageTicks >= durationTicks;
     }
+
+    public void tick() {
+        ageTicks++;
+    }
 }
 
 

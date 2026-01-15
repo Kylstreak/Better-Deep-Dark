@@ -13,6 +13,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class ServerCommands {
@@ -27,12 +29,13 @@ public class ServerCommands {
                 BlockHitResult rayCastResult = ModUtil.rayCastBlock(player, 4.5f);
                 if (rayCastResult.getType() == HitResult.Type.BLOCK) {
                     BlockPos blockPos = rayCastResult.getBlockPos();
-                    BlockState hitBlock = player.getWorld().getBlockState(blockPos);
+                    World world = player.getWorld();
+                    BlockState hitBlock = world.getBlockState(blockPos);
                     if (hitBlock.isOf(ModBlocks.SKULK_CONDUIT)) {
-                        SkulkConduit conduitBlock = (SkulkConduit) hitBlock.getBlock();
                         if (hitBlock.get(SkulkConduit.ACTIVE)) {
-                            conduitBlock.activateFirst(player.getWorld(), blockPos, false);
-                            return 1;
+                            SkulkConduit.collectAllInNetwork(world, blockPos).forEach((pos, state) -> {
+                                world.setBlockState(pos, state.with(SkulkConduit.ACTIVE, false).with(SkulkConduit.SHOULD_ACTIVATE, false));
+                            });
                         }
                     }
                     else source.sendError(Text.of("You must be looking at a skulk conduit block to run that command"));

@@ -1,4 +1,4 @@
-package com.ks12.better_deep_dark.common.tools.items;
+package com.ks12.better_deep_dark.common.items.tools;
 
 import com.ks12.better_deep_dark.registry.ModParticles;
 import com.ks12.better_deep_dark.registry.ModSounds;

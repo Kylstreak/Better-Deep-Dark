@@ -1,6 +1,6 @@
 package com.ks12.better_deep_dark.registry;
 
-import com.ks12.better_deep_dark.common.tools.items.*;
+import com.ks12.better_deep_dark.common.items.tools.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;

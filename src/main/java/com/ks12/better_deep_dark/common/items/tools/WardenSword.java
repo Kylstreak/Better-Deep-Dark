@@ -1,7 +1,10 @@
-package com.ks12.better_deep_dark.common.tools.items;
+package com.ks12.better_deep_dark.common.items.tools;
 
 import com.ks12.better_deep_dark.BetterDeepDark;
+import com.ks12.better_deep_dark.network.ModNetworkingConstants;
 import com.ks12.better_deep_dark.registry.ModSounds;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -9,6 +12,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
@@ -83,6 +88,16 @@ public class WardenSword extends SwordItem {
                     livingEntity.velocityModified = true;
                     livingEntity.velocityDirty = true;
                 }
+            }
+
+            for (ServerPlayerEntity player1 : ((ServerWorld) world).getPlayers()) {
+                Vec3d shockwaveLoc = player.getPos();
+                if (shockwaveLoc.squaredDistanceTo(player1.getPos()) > 128.0 * 128.0) continue;
+                PacketByteBuf buf = PacketByteBufs.create();
+                buf.writeBlockPos(BlockPos.ofFloored(shockwaveLoc));
+                buf.writeFloat((float) WARDENS_CRY_RANGE);
+                buf.writeInt(10); // TODO: testing value only extract magic number to constant
+                ServerPlayNetworking.send(player1, ModNetworkingConstants.RENDER_SHOCKWAVE_PACKET_ID, buf);
             }
 
             world.playSound(null, BlockPos.ofFloored(player.getPos()), ModSounds.SONIC_BLAST_SOUND, SoundCategory.BLOCKS, 3.0f, 1f);

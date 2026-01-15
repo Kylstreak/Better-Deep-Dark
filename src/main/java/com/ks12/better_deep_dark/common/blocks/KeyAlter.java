@@ -63,11 +63,21 @@ public class KeyAlter extends Block implements BlockEntityProvider {
         if (!(be instanceof KeyAlterBlockEntity alter)) return ActionResult.PASS;
 
         ItemStack held = player.getStackInHand(hand);
-
         if (alter.getStack().isEmpty() && !held.isEmpty()) {
             ItemStack stack = held.split(1);
-            alter.setStack(stack);
+
             BetterDeepDark.LOGGER.warn(stack.isIn(ModTags.Items.SCULK_ITEMS));
+            if (stack.isOf(ModItems.WARDEN_HEART)) {
+                BlockState belowState;
+                BlockPos.Mutable mutable = pos.mutableCopy().move(Direction.DOWN);
+                if ((belowState = world.getBlockState(mutable)).isOf(ModBlocks.SKULK_CONDUIT)) {
+                    SkulkConduit skulkConduit = (SkulkConduit) belowState.getBlock();
+                    skulkConduit.activateFirst(world, mutable, true);
+                }
+                return ActionResult.CONSUME;
+            }
+
+            alter.setStack(stack);
             world.scheduleBlockTick(pos, this, stack.isIn(ModTags.Items.SCULK_ITEMS) ? SKULK_HOLD_TICKS : NON_SKULK_HOLD_TICKS);
             return ActionResult.CONSUME;
         }
@@ -84,31 +94,22 @@ public class KeyAlter extends Block implements BlockEntityProvider {
             ItemStack stackCopy = alter.getStack().copy();
             alter.setStack(ItemStack.EMPTY);
 
-            if (stackCopy.isOf(ModItems.WARDEN_HEART)) {
-                BlockState belowState;
-                BlockPos.Mutable mutable = pos.mutableCopy().move(Direction.DOWN);
-                if ((belowState = world.getBlockState(mutable)).isOf(ModBlocks.SKULK_CONDUIT)) {
-                    SkulkConduit skulkConduit = (SkulkConduit) belowState.getBlock();
-                    skulkConduit.activateFirst(world, mutable, true);
-                }
-            }
-            else {
-                ItemEntity item = new ItemEntity(
-                        world,
-                        pos.getX() + 0.5,
-                        pos.getY() + 1.0,
-                        pos.getZ() + 0.5,
-                        stackCopy
-                );
+            ItemEntity item = new ItemEntity(
+                    world,
+                    pos.getX() + 0.5,
+                    pos.getY() + 1.0,
+                    pos.getZ() + 0.5,
+                    stackCopy
+            );
 
-                double xzSpeed = 0.01 + world.random.nextDouble() * 0.04;
-                double xDir = world.random.nextBoolean() ? xzSpeed : -xzSpeed;
-                double zDir = world.random.nextBoolean() ? xzSpeed : -xzSpeed;
+            double xzSpeed = 0.01 + world.random.nextDouble() * 0.04;
+            double xDir = world.random.nextBoolean() ? xzSpeed : -xzSpeed;
+            double zDir = world.random.nextBoolean() ? xzSpeed : -xzSpeed;
 
-                item.setVelocity(xDir, 0.5, zDir);
+            item.setVelocity(xDir, 0.5, zDir);
 
-                world.spawnEntity(item);
-            }
+            world.spawnEntity(item);
+
         }
     }
 
