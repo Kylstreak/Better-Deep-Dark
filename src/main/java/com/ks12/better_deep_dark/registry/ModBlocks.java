@@ -13,7 +13,9 @@ public class ModBlocks {
             .addClientRegistrationParameter(constructor-> BlockRenderLayerMap.INSTANCE.putBlock(constructor.entry, RenderLayer.getCutout()))
             .build();
     public static final Block SKULK_CONDUIT = RegistryHandler.registryEntry(Registries.BLOCK, "skulk_conduit", new SkulkConduit()).build();
-    public static final Block SKULK_PYLON = RegistryHandler.registryEntry(Registries.BLOCK, "skulk_pylon", new SkulkPylon()).build();
+    public static final Block SKULK_PYLON = RegistryHandler.registryEntry(Registries.BLOCK, "skulk_pylon", new SkulkPylon()).addClientRegistrationParameter(constructor -> {
+        BlockRenderLayerMap.INSTANCE.putBlock(constructor.entry, RenderLayer.getTranslucent());
+    }).build();
 
     public static void load() {}
 }

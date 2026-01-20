@@ -15,15 +15,13 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class SkulkConduit extends Block {
 
     public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
-    public static final int DELAY_TICKS = 2;
+    public static final int DELAY_TICKS = 5;
     public static final BooleanProperty SHOULD_ACTIVATE = BooleanProperty.of("should_be_active");
 
     public SkulkConduit() {
@@ -37,12 +35,13 @@ public class SkulkConduit extends Block {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(ACTIVE);
         builder.add(SHOULD_ACTIVATE);
+        super.appendProperties(builder);
     }
 
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
         if (world.isClient) return;
-
+        if (sourceBlock != ModBlocks.SKULK_CONDUIT) return;
         boolean desired = shouldBeActive(world, pos);
         if (state.get(SHOULD_ACTIVATE) == desired) return;
 
@@ -56,6 +55,7 @@ public class SkulkConduit extends Block {
     }
 
     private static boolean shouldBeActive(World world, BlockPos pos) {
+        BlockState state = world.getBlockState(pos);
         for (Direction dir : Direction.values()) {
             BlockPos nPos = pos.offset(dir);
             BlockState ns = world.getBlockState(nPos);

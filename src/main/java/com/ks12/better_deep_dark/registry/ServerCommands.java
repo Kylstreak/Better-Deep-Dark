@@ -4,6 +4,7 @@ import com.ks12.better_deep_dark.common.blocks.SkulkConduit;
 import com.ks12.better_deep_dark.util.ModUtil;
 import com.mojang.brigadier.Command;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.command.CommandManager;
@@ -33,9 +34,14 @@ public class ServerCommands {
                     BlockState hitBlock = world.getBlockState(blockPos);
                     if (hitBlock.isOf(ModBlocks.SKULK_CONDUIT)) {
                         if (hitBlock.get(SkulkConduit.ACTIVE)) {
-                            SkulkConduit.collectAllInNetwork(world, blockPos).forEach((pos, state) -> {
-                                world.setBlockState(pos, state.with(SkulkConduit.ACTIVE, false).with(SkulkConduit.SHOULD_ACTIVATE, false));
-                            });
+                            for (BlockPos p : SkulkConduit.collectAllInNetwork(world, blockPos).keySet()) {
+                                BlockState s = world.getBlockState(p);
+                                world.setBlockState(
+                                        p,
+                                        s.with(SkulkConduit.ACTIVE, false).with(SkulkConduit.SHOULD_ACTIVATE, false),
+                                        Block.NOTIFY_LISTENERS
+                                );
+                            }
                         }
                     }
                     else source.sendError(Text.of("You must be looking at a skulk conduit block to run that command"));
