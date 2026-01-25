@@ -1,45 +1,198 @@
-# Better Deep Dark
+# Better Deep Dark  
+### A systemic overhaul of Minecraft’s Deep Dark
 
-### A mod to upgrade Minecraft's Deep Dark
+**Better Deep Dark** is not a “more loot” or “stronger gear” mod.  
+Its goal is to turn the Deep Dark from a place you avoid into a **mandatory progression layer** that bridges late-game survival and true endgame content.
 
-## Features
+The mod reframes the Deep Dark as a **living, reactive system** where sound, risk, and escalation drive progression.
 
-> NOTE: Some of these items seem kind of overpowered but trust me when you see the absolute walking death i plan to implement for the dimension, they seem kinda wimpy
+---
 
-### Currently Implemented features:
+## Design Philosophy
 
-- Key alter - Sacrifice a wardens heart and see what happens...
-- Skulk conduit block
-  - Can only be activated by throwing a warden's heart into an alter atop a conduit
-  - (DEVELOPMENT ONLY) can be reset by running /resetconduit while looking at
-  - blocks are chained activating one will activate all connected and deactivating one will deactivate all connected
-- Wardens heart - Beats ominously...
-- Wardens sword (partially implemented)
-  - Wardens Cry - After dealing sufficient damage, on next hit implements an AOE attack that damages all nearby entities (wolves excluded) and throws them away from the player, however if used near a shrieker will bypass cooldowns and immediately summon a warden. Can be canceled by crouching on next hit
-- Wardens axe
-  - Sonic blast - After dealing sufficient damage, on next CRITICAL hit implements a targeted sound blast that deals knockback multiplied by the amount of damage done
+- The Deep Dark is not safe, even after mastery  
+- Power is allowed, but never free  
+- Sound is a first-class mechanic  
+- Cheesing is discouraged, not forbidden  
+- Endgame content should feel hostile, intentional, and earned  
 
-### Planed Features
+This mod assumes players already understand vanilla mechanics and deliberately builds **on top of them**, not around them.
 
-- Portal pylon - sits atop the massive tower structures near the portal, I wonder what happens when the conduit block below is activated...
-- Wardens armor set
-  - Helmet
-    - Echolocation - Counteracts the darkness effect
-  - Chestplate
-    - All consuming - When a player takes damage a 50% of it is consumed by the chestplate and emmited as a sound. Sound strength is equal to the amount of damage taken. This ability can be toggled on or off using the keybind (default: j)
-  - Leggings
-    - Abyssal Fortitude - Grants permanent resistance 2 while the player is below y = 0 or in the deep dark dimension
-  - Boots
-    - Abyssal veil - Allows the player to move without triggering sound sensitive blocks or entities, entities can still sniff the player as well as hear any sounds produced by the player interacting in the world or taking/dealing damage
-- Wardens shield 
-  - Echos Ward - Allows blocking of any sound based attacks but at a cost, sound based attacks will be redistributed as sound waves which can alert nearby shriekers/skulk sesors
-- Wardens tools (hoe/pickaxe/shovel)
-  - Depth’s whisper - greatly decrease the range for which blocks broken/tilled/stripped by the tool can be heard from allowing easier breakage of shriekers and detectors
-- Other enchantments
-  - Chasm’s embrace (boots) - increases the height the player can fall from without taking damage ONLY while in the deep dark
-  - Sculk Synergy (tools) - increases the tools mining speed based on the amount of sculk blocks nearby can be used with Efficeincy and the speed boost will stack (accepts sculk block, sculk vein, sculk sensor, sculk catalyst)
-  - Echo of catalysis (sword) - killing mobs  will spread nearby sculk regardless of whether a catalyst is present.
-- Sculk apple - gives the standard golden apple effects plus:
-  - Whisper’s embrace - status effect that temporarily allows any action to be performed without alerting nearby sound sensitive blocks or entities
+---
 
+## Core Systems Overview
 
+### 1. Enhanced Warden Encounters
+Wardens are no longer static obstacles.
+
+- Increased mobility and aggression  
+- Punishes common cheese strategies  
+- Designed to force **direct engagement**  
+- Killing a Warden is meant to feel costly, even late-game  
+
+Wardens act as **gatekeepers**, not bosses you farm casually.
+
+---
+
+### 2. Warden Heart
+A rare drop from Wardens.
+
+- Pulses and reacts to sculk  
+- Used as a **key item** rather than a crafting material  
+- Central to unlocking deeper systems  
+
+The heart is the player’s first real signal that the Deep Dark has layers beyond survival.
+
+---
+
+### 3. Key Alter
+A ritual-style block used to offer items to the Deep Dark.
+
+- Accepts items and temporarily displays them  
+- Behavior depends on item type (sculk vs non-sculk)  
+- Handles edge cases safely (block removal, command abuse, etc.)  
+
+The Key Alter is intentionally opaque—it teaches by reaction, not explanation.
+
+---
+
+### 4. Sculk Conduit Network
+A chained system of sculk structures.
+
+- Activating one conduit affects all connected conduits  
+- Activation is triggered by sacrificing a Warden Heart  
+- Represents the Deep Dark “waking up”  
+
+This is the first moment where the player realizes the Deep Dark operates at a **global scale**.
+
+---
+
+### 5. Warden Equipment (Mid-Endgame Gear)
+
+#### Warden Armor Set
+Each piece introduces strong effects with systemic consequences:
+
+- **Helmet – Echolocation**  
+  Counteracts Darkness, but does not grant invulnerability  
+
+- **Chestplate – All Consuming**  
+  Converts a portion of damage taken into sound  
+  Sound strength scales with damage  
+  Toggleable via keybind  
+
+- **Leggings – Abyssal Fortitude**  
+  Resistance II while below Y=0 or in Deep Dark zones  
+
+- **Boots – Abyssal Veil**  
+  Suppresses movement sounds  
+  Does *not* suppress interaction or combat sounds  
+
+This gear makes the player **louder in new ways**, not safer.
+
+---
+
+### 6. Warden Weapons
+
+#### Warden Sword – *Wardens Cry*
+- Builds charge through combat  
+- Releases a powerful sonic shockwave  
+- Strong knockback (4–5 blocks)  
+- Area denial and crowd control focused  
+- Generates sound waves that can trigger shriekers  
+
+Intentionally strong—and intentionally dangerous to overuse.
+
+#### Warden Axe – *Sonic Blast*
+- Charged via sustained combat  
+- Triggered on critical hits  
+- Targeted, directional knockback  
+- Scales with damage dealt  
+
+The axe rewards precision; the sword rewards momentum.
+
+---
+
+### 7. Sound-Based Tools & Enchantments
+
+- **Depth’s Whisper (Tools)**  
+  Reduces sound radius of block interactions  
+
+- **Sculk Synergy (Tools)**  
+  Mining speed scales with nearby sculk blocks  
+  Stacks with Efficiency  
+
+- **Chasm’s Embrace (Boots Enchant)**  
+  Increased fall tolerance *only* in Deep Dark environments  
+
+- **Echo of Catalysis (Sword Enchant)**  
+  Killing mobs spreads sculk without catalysts  
+
+These mechanics reinforce that sculk is an **environmental resource**, not decoration.
+
+---
+
+### 8. Portal Pylon & New Dimension
+Deep structures contain dormant **Portal Pylons**.
+
+- Activated via the sculk conduit network  
+- Leads to a new, hostile dimension  
+- No tutorial, no safety net  
+
+The player enters **unprepared by design**.
+
+---
+
+### 9. The Mirror Lost City & Corrupted Villagers
+Within the new dimension lies the **Mirror Lost City**.
+
+- Corrupted Villagers spawn only here  
+- Scream when they detect the player  
+- Follow but do not attack  
+
+**Interaction Behavior**
+- Right-click opens a trade UI  
+- One meaningless trade  
+- Always unavailable  
+- Profession text is obfuscated  
+
+These entities exist purely for **psychological tension and environmental storytelling**.
+
+---
+
+### 10. Death & Persistence
+Death in this dimension is different.
+
+- Items persist and can be recovered  
+- The world does not reset  
+- Entities remember your presence  
+
+Death becomes **part of discovery**, not failure.
+
+---
+
+## Modpack & Datapack Friendly Design
+
+- Uses tags instead of hardcoded checks  
+- Modpack creators can:
+  - Add new sculk items  
+  - Extend sacrifice logic  
+  - Integrate other mods seamlessly  
+
+Designed to be **expanded, not replaced**.
+
+---
+
+## What This Mod Is Not
+
+- Not a power fantasy  
+- Not a loot explosion  
+- Not a vanilla replacement  
+
+---
+
+## What It Is
+
+- A hostile, reactive progression layer  
+- A sound-driven systemic experience  
+- A bridge between survival mastery and true endgame  
+- A mod that rewards understanding over brute force  
