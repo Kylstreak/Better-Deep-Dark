@@ -1,165 +1,157 @@
 # Better Deep Dark
 
-**Better Deep Dark** is a Minecraft mod that expands the Deep Dark from a single biome with a scary mob into a **full endgame system** built around sound, pressure, and inevitability.
+**Better Deep Dark** is a Minecraft mod that expands the Deep Dark from a single biome with a single terrifying mob into a **fully realized endgame ecosystem** built around sound, pressure, inevitability, and consequence.
 
-This mod is not about adding “stronger gear and bigger numbers.”  
-It is about introducing a **new axis of gameplay** where sound, silence, and environmental awareness matter just as much as damage output.
+This mod does not aim to simply add stronger gear.  
+It introduces **new systems, new entities, and a new dimension** where sound is currency, silence is power, and mistakes compound rapidly.
 
 The Deep Dark is no longer a place you visit once.  
-It is a place that **pushes back**.
+It is a place that **remembers you**.
 
 ---
 
-## Design Philosophy
+## Core Design Philosophy
 
 - Sound is a mechanic, not flavor
-- Silence is power, but never free
+- Silence is powerful but never free
 - The environment is hostile, adaptive, and systemic
-- The player is not the first to encounter this threat
-- The Warden is not the boss — it is a containment tool
+- The Warden is not the boss — it is a containment mechanism
+- The true threat is older, deeper, and patient
 
-This mod aims to feel:
-- oppressive, not flashy
-- dangerous, not unfair
-- learnable, not brute-forceable
+This mod is designed to feel:
+- oppressive rather than flashy
+- dangerous rather than unfair
+- learnable rather than brute-forceable
 
 ---
 
 ## Currently Implemented Features
 
 ### Key Altar
-An ancient altar structure used to interact with sculk systems.
+An ancient sculk-bound altar used to interface with Deep Dark systems.
 
-- Accepts items placed directly onto the altar
-- Holds items temporarily before resolving their outcome
-- Rejects invalid items after a delay
-- Acts as the primary interface between the player and sculk infrastructure
+- Items can be placed directly onto the altar
+- Items are held for a fixed duration before resolving
+- Invalid items are rejected and ejected back into the world
+- Serves as the primary interaction point for sculk infrastructure
 
 ---
 
 ### Sculk Conduit
-A foundational block in Deep Dark infrastructure.
+The backbone of Deep Dark progression.
 
 - Activated by sacrificing a **Warden’s Heart** at a Key Altar placed above it
-- Once activated, conduits:
-  - emit light
-  - propagate activation to connected conduits
-  - permanently change the surrounding environment
-- Conduits form **networks**, not isolated blocks
+- Once activated:
+  - emits light
+  - permanently alters the surrounding area
+  - propagates activation to connected conduits
+- Conduits function as **networks**, not isolated blocks
 
-> Development-only reset commands exist for testing  
-> In normal gameplay, activation is intended to be permanent
+> Development-only reset commands exist  
+> In intended gameplay, conduit activation is permanent
 
 ---
 
 ### Warden’s Heart
-A rare drop tied directly to high-risk gameplay.
+A rare and ominous drop.
 
 - Beats audibly when carried
-- Interacts with Key Altars and Conduits
-- Required for progression into deeper systems
+- Reacts to Deep Dark structures
+- Required to activate conduits and progress deeper
+- Acts as a narrative and mechanical key
 
 ---
 
-### Warden Weapons
+## Weapons
 
-#### Warden Sword (Partially Implemented)
+### Warden Sword (Partially Implemented)
 **Wardens Cry**
 
-- Damage dealt is accumulated across hits
+- Tracks cumulative damage dealt
 - After reaching a threshold:
-  - the next attack releases a **radial sonic shockwave**
+  - the next hit releases a **radial sonic shockwave**
   - nearby entities are violently displaced
 - Wolves are excluded to preserve vanilla strategies
-- Crouching cancels the ability
-- Using the ability near a shrieker can **bypass cooldowns and immediately summon a Warden**
+- Can be canceled by crouching
+- Using the ability near a shrieker can:
+  - bypass cooldowns
+  - immediately summon a Warden
 
-This is not a free AOE — it is a risk amplifier.
+This ability is intentionally dangerous.  
+Power invites attention.
 
 ---
 
-#### Warden Axe
+### Warden Axe
 **Sonic Blast**
 
-- Damage dealt is accumulated
+- Tracks cumulative damage dealt
 - On a **critical hit**, releases a focused sonic blast
-- Knockback strength scales with damage accumulated
-- Rewards precision, timing, and positioning
+- Knockback scales with stored damage
+- Designed for precision rather than crowd control
 
 ---
 
-## Planned Features
+## Armor Set — Warden Gear
 
-### Portal Pylon
-A massive structure found in ancient Deep Dark cities.
-
-- Built atop enormous tower formations
-- Requires an active Sculk Conduit beneath it
-- Serves as the gateway to a new dimension
-- Activation is loud, irreversible, and dangerous
-
----
-
-## Warden Armor Set
-
-Each piece introduces a **systemic advantage** rather than raw stats.
+Each piece provides a **systemic advantage**, not raw dominance.
 
 ### Helmet — *Echolocation*
 - Counteracts the Darkness effect
-- Allows partial spatial awareness even in sensory-deprived environments
+- Allows limited spatial awareness in sensory-deprived areas
 
 ---
 
 ### Chestplate — *All Consuming*
 - When the player takes damage:
-  - 50% of the damage is absorbed
-  - the absorbed energy is emitted as sound
+  - 50% is absorbed
+  - absorbed damage is emitted as sound
 - Sound strength scales with damage taken
-- Can be toggled via keybind (default: `J`)
+- Ability can be toggled via keybind (default: `J`)
 
-Power at the cost of attention.
+Defense that shifts risk rather than removing it.
 
 ---
 
 ### Leggings — *Abyssal Fortitude*
 - Grants permanent Resistance II:
-  - below Y=0
-  - or while inside the Deep Dark dimension
+  - below Y = 0
+  - or while in the Deep Dark dimension
 
 ---
 
 ### Boots — *Abyssal Veil*
 - Allows silent movement:
-  - no sound-triggering blocks
+  - no triggering of sound-sensitive blocks
   - no sound-based entity detection
 - Does **not** prevent:
   - sniff-based detection
-  - sounds from combat or interaction
+  - combat or interaction sounds
 
 Silence is not invisibility.
 
 ---
 
-## Warden Shield
+## Shield
 
-### *Echo’s Ward*
+### Warden Shield — *Echo’s Ward*
 - Blocks sound-based attacks
 - Absorbed sound is redistributed into the environment
-- Nearby shriekers and sensors may be triggered as a result
-- Ability has a cooldown — cannot be held indefinitely
+- Can trigger shriekers and sensors nearby
+- Has a cooldown — cannot be held indefinitely
 
-Defense that shifts danger rather than removing it.
+Defense that relocates danger instead of erasing it.
 
 ---
 
-## Warden Tools
+## Tools
 
-### Depth’s Whisper
-(Applies to hoe, pickaxe, shovel)
+### Warden Tools (Hoe, Pickaxe, Shovel)
+**Depth’s Whisper**
 
-- Significantly reduces the distance at which block interactions can be heard
-- Enables safer interaction near shriekers and sensors
-- Still risky — mistakes compound quickly
+- Greatly reduces the audible range of block interactions
+- Enables safer navigation near shriekers and sensors
+- Mistakes still escalate rapidly
 
 ---
 
@@ -176,17 +168,17 @@ Defense that shifts danger rather than removing it.
 - Accepts:
   - sculk blocks
   - sculk veins
-  - sensors
-  - catalysts
+  - sculk sensors
+  - sculk catalysts
 - Stacks with Efficiency
 
 ---
 
 ### Echo of Catalysis (Sword)
 - Killing mobs spreads sculk
-- Functions without a catalyst present
+- Works without a catalyst present
 
-Power that reshapes the world.
+Power that reshapes the environment.
 
 ---
 
@@ -195,61 +187,117 @@ Power that reshapes the world.
 ### Sculk Apple
 - Grants all standard Golden Apple effects
 - Adds **Whisper’s Embrace**:
-  - temporarily allows actions without triggering sound-sensitive blocks or entities
+  - temporarily allows actions without alerting sound-sensitive systems
 
 A brief taste of true silence.
 
 ---
 
-## New Dimension & Boss Encounter
+## New Mobs
 
-### The Deep Dark Dimension
-Accessed via the Portal Pylon.
+### Corrupted Villager
+A warped remnant of Deep Dark exposure.
 
-- Hostile, oppressive, and reactive
-- Built around verticality, sound pressure, and limited safety
-- Not meant to be explored casually
+- Spawns exclusively in **Mirror Lost Cities**
+- Emits sudden screams when detecting players
+- Actively follows players at a distance
+- Interacting opens a trade interface:
+  - only one trade exists
+  - sculk for sculk
+  - trade is permanently disabled
+- Profession text is fully obfuscated
+
+The villager is not broken.  
+It is **waiting**.
 
 ---
 
-### Dimension Boss — *The Convergence*
+### Additional Sculk Entities (Planned / In Progress)
+- Environmental sculk constructs
+- Sound-reactive entities tied to the new dimension
+- Non-hostile entities that still create danger through noise
 
-This is not a traditional boss.
+---
 
-- It is a **system**
-- A centralized consciousness that feeds on sound
-- The Warden was created to contain it — not defeat it
+## Portal Pylon
 
-#### Arena Mechanics
+A massive structure found in Deep Dark megacities.
+
+- Built atop enormous ancient towers
+- Requires an active Sculk Conduit beneath it
+- Activation is loud, irreversible, and dangerous
+- Serves as the gateway to a new dimension
+
+---
+
+## New Dimension — The Deep Dark Beyond
+
+A hostile realm formed entirely around sound pressure and containment failure.
+
+- Vertical, claustrophobic, and reactive
+- Environmental hazards replace traditional terrain danger
+- Silence becomes a limited resource
+
+This is not a place for exploration.  
+It is a place for **resolution**.
+
+---
+
+## Dimension Boss — *The Convergence*
+
+The true source of the Deep Dark.
+
+- A centralized, sentient sound-based entity
+- Feeds on noise and disturbance
+- The Warden exists to suppress it — not defeat it
+
+---
+
+### Boss Arena Mechanics
+
 - Massive core chamber
-- Shrieker Chests embedded throughout the environment
-- Sound feeds the boss and empowers the arena
+- Embedded **Shrieker Chests** throughout the environment
+- Sound strengthens the boss and destabilizes the arena
 
-#### Shrieker Chests
+---
+
+### Shrieker Chests
+
 - Contain active shriekers
 - Open and close dynamically
 - Emit directional sonic pressure
 - Must be disabled to weaken the boss
-- Destroying one causes a massive retaliation
+- Destroying one causes violent retaliation
 
-#### Boss Phases
-1. **Awakening** — silence, pressure, inevitability
-2. **Environmental Control** — sound pulses, movement suppression
-3. **System Dismantling** — disabling shrieker infrastructure
-4. **Escalation** — arena actively fights the player
-5. **Final Exposure** — brief DPS window, overwhelming force
+---
 
-Victory does not destroy the Deep Dark.
+### Boss Phases
 
+1. **Dormant Pressure**  
+   Silence dominates. The arena watches.
+
+2. **Environmental Control**  
+   Sonic pulses, movement denial, sound traps.
+
+3. **Infrastructure Dismantling**  
+   Players disable shrieker systems under pressure.
+
+4. **Escalation**  
+   Arena itself becomes hostile.
+
+5. **Final Exposure**  
+   A brief window where the core can be damaged.
+
+Victory does not destroy the Deep Dark.  
 It **disconnects it**.
 
 ---
 
 ## World Consequences
 
-- The Deep Dark stops expanding
-- Sculk begins retracting from ancient cities
-- The world reflects the player’s actions over time
+- Deep Dark expansion halts
+- Sculk slowly retracts from ancient cities
+- The world permanently reflects the player’s actions
 
 This is not a loot fight.  
 It is a **world-altering event**.
@@ -261,8 +309,8 @@ It is a **world-altering event**.
 - Uses tags instead of hard-coded checks
 - Modpack authors can:
   - add new sculk items
-  - integrate custom systems via datapacks
-- Designed to play well with other mods
+  - extend systems via datapacks
+- Designed for deep integration, not isolation
 
 ---
 
@@ -273,6 +321,6 @@ Better Deep Dark is designed for players who want:
 - systems over gimmicks
 - consequence over convenience
 
-This mod assumes you are willing to learn.
+The Deep Dark was never empty.
 
-The Deep Dark already did.
+It was waiting.
