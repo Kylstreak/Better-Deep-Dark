@@ -170,6 +170,56 @@ Death becomes **part of discovery**, not failure.
 
 ---
 
+## 11. The Dimension Boss and the Breach Cycle (Endgame Anchor)
+
+The new dimension culminates in a **single controlling entity**—not framed as “evil,” but as **purpose-built and inevitability-driven**. The intent is *omnipotent, indifferent, and all-consuming* rather than malicious.
+
+### Boss Framing
+- The boss is treated as a **sentinel / consumption engine**, not a revenge monster.
+- Its attacks are designed to feel like **assimilation attempts**, not just damage events:
+  - pulling, enveloping, binding, suppressing escape routes
+  - crowd-control and “you are being taken” messaging
+
+### Narrative Implication
+The story implies the original inhabitants **did not defeat** the entity.
+
+Instead:
+- They were **consumed**, and the city collapsed into catastrophe.
+- Their final “solution” was not victory, but containment:
+  - They **sealed/cut off the breach**, limiting the spread.
+  - The overworld sculk survived only in “minor” forms (catalyst spread, ambient infection), because it was **starved from its source**.
+
+Reopening the portal reconnects the system to the source again—meaning the Deep Dark is no longer just a biome, it is a **reconnected pipeline**.
+
+### Overworld Retraction Event (Post-Boss)
+After the boss is defeated, the mod triggers a world-state reversal:
+
+- **All “boss-linked” sculk in the overworld retracts** from any affected Lost City areas.
+- This is not an instant delete:
+  - If the player escapes the dimension before the boss death animation completes, they can witness a **gradual, visible retraction**—sculk “peeling back” over time.
+- The effect sells the idea that sculk was not simply “blocks,” but a **connected intrusion** whose strength depended on the breach being open.
+
+### Why this works (gameplay + story)
+- Gameplay: gives the boss fight **world-level consequences**, not just loot.
+- Story: confirms the core theme:
+  - the prior civilization only managed **containment**
+  - the player accomplishes what they couldn’t: **severing the link at the source**
+
+---
+
+## Addendum: Lore Delivery Method (Journals)
+The Lost Cities contain scattered, degraded journals that provide **fragments**, not answers.
+
+- Multiple voices, inconsistent phrasing, differing reliability
+- Some entries contain wrong conclusions (“I think…” / “maybe…”) to simulate real discovery and failure
+- The goal is a “crime board” experience:
+  - the player learns *sound matters*, *center matters*, *the Warden is significant*
+  - but must infer **why**, and must discover the exact solution (e.g., Warden Heart sacrifice) by experimentation
+
+This prevents puzzle-wall frustration while still keeping the player responsible for the final connection.
+
+--
+
 ## Modpack & Datapack Friendly Design
 
 - Uses tags instead of hardcoded checks  
